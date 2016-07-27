@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBConnection {
 	public static final String DATABASE_DRIVER = "org.h2.Driver";
 
-	public static final String DATABASE_PREFIX = "jdbc:h2:file:/F:/Setup/h2/database/tdd";
+	public static final String DATABASE_PREFIX = "jdbc:h2:./database/tdd";
 	public static final String DATABASE_HOST = "";
 	public static final String DATABASE_SCHEMA = "";
 

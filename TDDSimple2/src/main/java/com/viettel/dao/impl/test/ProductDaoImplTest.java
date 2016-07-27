@@ -1,7 +1,5 @@
 package com.viettel.dao.impl.test;
 
-import static org.junit.Assert.fail;
-
 import java.sql.SQLException;
 
 import org.dbunit.DatabaseUnitException;
@@ -19,7 +17,7 @@ import com.viettel.entity.Product;
 
 public class ProductDaoImplTest {
 
-	public static final String fileData = "\\datatest\\products.xml";
+	public static final String fileData = "./datatest/products.xml";
 
 	private IDataSet dataset;
 	private IDatabaseConnection conn;
@@ -27,7 +25,7 @@ public class ProductDaoImplTest {
 	@Before
 	public void setup() throws Exception {
 		conn = DatabaseTest.getInstance().connect();
-		dataset = DatabaseTest.readDataset(DatabaseTest.DIC_BASE + fileData);
+		dataset = DatabaseTest.readDataset(fileData);
 		DatabaseTest.insertData(conn, dataset);
 	}
 
