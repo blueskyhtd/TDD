@@ -9,6 +9,7 @@ import com.viettel.service.StaffService;
 
 public class StaffServiceImpl implements StaffService {
 
+	// caculate cost of bill
 	public int calculate(BillService billService, int billId) {
 		Bill bill = billService.getById(billId);
 
@@ -26,4 +27,10 @@ public class StaffServiceImpl implements StaffService {
 
 		return sum;
 	}
+
+	public double calculate(BillService billService, int billId,
+			double exchangeRate) {
+		return calculate(billService, billId) * exchangeRate;
+	}
+
 }

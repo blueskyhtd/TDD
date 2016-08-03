@@ -17,6 +17,7 @@ public class ProductDaoImpl implements ProductDao {
 		connection = DBConnection.getInstance().getConnect();
 	}
 
+	//Method get product by id
 	public Product getById(int id) throws SQLException {
 		String sql = "SELECT * FROM PRODUCT WHERE ID = ?";
 		PreparedStatement state = connection.prepareStatement(sql);

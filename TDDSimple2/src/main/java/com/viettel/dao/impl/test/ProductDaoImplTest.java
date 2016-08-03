@@ -30,6 +30,7 @@ public class ProductDaoImplTest {
 	}
 
 	@Test
+	//Test with DBUnit
 	public void testGetById() throws SQLException {
 		ProductDao productDao = new ProductDaoImpl();
 		Product product = productDao.getById(2);
