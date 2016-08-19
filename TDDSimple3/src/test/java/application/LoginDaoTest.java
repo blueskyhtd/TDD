@@ -1,4 +1,4 @@
-package application.test;
+package application;
 
 import java.sql.SQLException;
 

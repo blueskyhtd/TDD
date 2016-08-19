@@ -5,8 +5,14 @@
 	<artifactId>TDDSimple3</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<name>TDDSimple3 Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.path>F:\Personal\Github\TDD\TDDSimple3</project.path>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -38,6 +44,15 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.21</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>h2</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.192</version>
+			<scope>system</scope>
+			<systemPath>${project.path}/libs/h2.jar</systemPath>
 		</dependency>
 	</dependencies>
 
@@ -48,6 +63,28 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.17</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<url>http://localhost:8080/manager/text</url>
+					<server>TomcatServer</server>
+					<username>deployer</username>
+					<password>123456a@</password>
+					<path>/TDDSimple3</path>
+					<update>true</update>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
+
 </project>
